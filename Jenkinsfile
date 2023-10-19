@@ -33,7 +33,7 @@ pipeline {
         stage("manifest updation"){
             steps{
                 echo "update of k8s manifest"
-                   build 'main'
+                   build job: 'main', parameters: [string(name: 'doc', value: BUILD_NUMBER)]
     }
 }
     }
