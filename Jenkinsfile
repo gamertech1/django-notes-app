@@ -34,7 +34,6 @@ pipeline {
         stage("manifest updation"){
             steps{
                 echo "update of k8s manifest"
-                  catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                         //def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
                         sh "git config user.email gamertech996@gmail.com"
@@ -46,7 +45,7 @@ pipeline {
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${BUILD_NUMBER}'"
                         sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/django-notes-app.git HEAD:main"
-      }
+
             }
     }
 }
