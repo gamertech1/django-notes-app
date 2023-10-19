@@ -18,7 +18,7 @@ spec:
         app: django-demo
     spec:
       containers:
-      - image: gamertech1/django-app:91
+      - image: gamertech1/django-app:92
         name: django-demo
         resources: {}
 status: {}
