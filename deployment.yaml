@@ -3,23 +3,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: django_demo
-  name: django_demo
+    app: django-demo
+  name: django-demo
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: django_demo
+      app: django-demo
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: django_demo
+        app: django-demo
     spec:
       containers:
       - image: gamertech1/django-app:75
-        name: django_demo
+        name: django-demo
         resources: {}
 status: {}
 ---
@@ -35,4 +35,4 @@ spec:
   - port: 8000
     targetPort: 8000
   selector:
-    app: django_demo
+    app: django-demo
